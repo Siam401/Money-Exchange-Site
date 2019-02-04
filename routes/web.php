@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/moneyexchange','ResourceController@index')->name('resources.home');
+Route::get('/moneyexchange/buy','ResourceController@buy')->name('resources.buy');
+Route::get('/moneyexchange/sell','ResourceController@sell')->name('resources.sell');
+
