@@ -14,8 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/moneyexchange','ResourceController@index')->name('resources.home');
-Route::get('/moneyexchange/buy','ResourceController@buy')->name('resources.buy');
-Route::get('/moneyexchange/sell','ResourceController@sell')->name('resources.sell');
+    Route::get('/moneyexchange','ResourceController@index')->name('resources.home');
+    Route::get('/moneyexchange/buy','ResourceController@buy')->name('resources.buy');
+    Route::post('/moneyexchange/buy/store','BuyController@store')->name('buy.store');
+    Route::get('/moneyexchange/sell','ResourceController@sell')->name('resources.sell');
+    Route::post('/moneyexchange/buy/store','SellController@store')->name('sell.store');
 
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

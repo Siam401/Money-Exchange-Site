@@ -68,33 +68,22 @@
           </tr>
         </thead>
         <tbody>
+        @php
+            $a=0;
+        @endphp
+		@if($buy_infoes!=null)
+        @foreach($buy_infoes as $buy_info)
           <tr data-expanded="true">
-            <td>1</td>
-            <td>12/10/2018</td>
-            <td>Buy</td>
-            <td>BKash</td>
-            <td>Skrill</td>
-            <td>$13</td>
-            <td>Sent</td>
+            <td>{{ ++$a }}</td>
+            <td>{{ $buy_info->created_at }}</td>
+            <td>{{ $buy_info->trx_type }}</td>
+            <td>{{ $buy_info->send_method }}</td>
+            <td>{{ $buy_info->receive_method }}</td>
+            <td>{{ $buy_info->receive_amount }}</td>
+            <td>sent</td>
           </tr>
-          <tr data-expanded="true">
-            <td>1</td>
-            <td>12/10/2018</td>
-            <td>Buy</td>
-            <td>BKash</td>
-            <td>Skrill</td>
-            <td>$13</td>
-            <td>Sent</td>
-          </tr>
-          <tr data-expanded="true">
-            <td>1</td>
-            <td>12/10/2018</td>
-            <td>Buy</td>
-            <td>BKash</td>
-            <td>Skrill</td>
-            <td>$13</td>
-            <td>Sent</td>
-          </tr>
+        @endforeach
+		@endif
         </tbody>
       </table>
     </div>

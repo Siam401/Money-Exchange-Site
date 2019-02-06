@@ -1,9 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <head>
 <title>MoneyExchange</title>
@@ -31,6 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('backend/js/jquery2.0.3.min.js')}}"></script>
 <script src="{{asset('backend/js/raphael-min.js')}}"></script>
 <script src="{{asset('backend/js/morris.js')}}"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 <section id="container">
@@ -61,13 +56,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="{{asset('backend/images/2.png')}}">
-                <span class="username">John Doe</span>
+                <span class="username">{{ Auth::user()->name }}</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="verify.php"><i class="fa fa-cog"></i> Verify</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="verify.blade.php"><i class="fa fa-cog"></i> Verify</a></li>
+                 <li>  <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                         <i class="fa fa-key"></i>
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                 </li>
             </ul>
         </li>
         <!-- user login dropdown end -->
