@@ -8,13 +8,15 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class ResourceController extends Controller
 {
    public function index(){
-//    $buy_infoes=DB::table('buys')->where('sender_name','ismail')->get();
-    $buy_infoes=Buy::all();
-    $sell_infoes=Sell::all();
+       $name=Auth::user()->name;
+    $buy_infoes=DB::table('buys')->where('sender_name',$name)->get();
+    $sell_infoes=DB::table('sells')->where('sender_name',$name)->get();
+
    	return view('index',compact('buy_infoes','sell_infoes'));
    }
    public function buy(){
