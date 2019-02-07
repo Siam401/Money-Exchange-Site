@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/moneyexchange/buy/store','BuyController@store')->name('buy.store');
     Route::get('/moneyexchange/buy/{id}/confirm','BuyController@confirm')->name('buy.confirm');
     Route::get('/moneyexchange/sell','ResourceController@sell')->name('resources.sell');
-    Route::post('/moneyexchange/buy/store','SellController@store')->name('sell.store');
+    Route::post('/moneyexchange/sell/store','SellController@store')->name('sell.store');
     Route::get('/moneyexchange/sell/{id}/confirm','SellController@confirm')->name('sell.confirm');
     Route::get('/moneyexchange/users','ResourceController@users')->name('resources.users');
 

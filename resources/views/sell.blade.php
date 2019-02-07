@@ -17,7 +17,9 @@
                                 <div class="alert alert-info" role="alert">
                                                     Coinbase BTC SELL করার ক্ষেত্রে এই মেইলে পাঠাতে পারবেন   <a href="#">tdbsewallet44@gmail.com </a>  এবং address এ sell  করার ক্ষেত্রে pending active হওয়ার পর প্রেমেন্ট দেওয়া হয় । BTC Sell করার ক্ষেত্রে নোট অফশনে আপনার বিকাশ / রকেট নাম্বার অবশ্যই দেবেন।
                                                 </div>
-                                {!! Form::open(['route' => 'sell.store']) !!}
+
+
+         {!! Form::open(['route' => 'sell.store']) !!}
                                 <input type="hidden" name="trx_type" value="sell" class="form-control"/>
                                 <input type="hidden" name="sender_name" value="{{ Auth::user()->name }}" class="form-control"/>
                                     <div class="form-group">

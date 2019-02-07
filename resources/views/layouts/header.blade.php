@@ -33,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.php" class="logo">
+    <a href="{{ route('home') }}" class="logo">
         Exchange
     </a>
     <div class="sidebar-toggle-box">
