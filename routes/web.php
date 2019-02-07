@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/moneyexchange','ResourceController@index')->name('resources.home');
+    Route::get('/moneyexchange/transections','ResourceController@transections')->name('resources.trx');
     Route::get('/moneyexchange/buy','ResourceController@buy')->name('resources.buy');
     Route::post('/moneyexchange/buy/store','BuyController@store')->name('buy.store');
     Route::get('/moneyexchange/sell','ResourceController@sell')->name('resources.sell');

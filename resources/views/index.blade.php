@@ -43,7 +43,7 @@
 			<div class="table-agile-info">
 			<div class="panel panel-default">
     <div class="panel-heading">
-     Transaction History of last 7 Days
+     Transaction History of Buying
     </div>
     <div>
       <table class="table" ui-jq="footable" ui-options='{
@@ -86,6 +86,49 @@
 		@endif
         </tbody>
       </table>
+		<div class="panel-heading">
+			Transaction History of Selling
+		</div>
+		<table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+			<thead>
+			<tr>
+				<th data-breakpoints="xs">SL</th>
+				<th>Date</th>
+				<th>Transection Type</th>
+				<th data-breakpoints="xs">Buy Method</th>
+				<th data-breakpoints="xs sm md" data-title="DOB">Receive Method</th>
+				<th>Amonut</th>
+				<th>Status</th>
+			</tr>
+			</thead>
+			<tbody>
+			@php
+				$a=0;
+			@endphp
+			@if($sell_infoes!=null)
+				@foreach($sell_infoes as $sell_info)
+					<tr data-expanded="true">
+						<td>{{ ++$a }}</td>
+						<td>{{ $sell_info->created_at }}</td>
+						<td>{{ $sell_info->trx_type }}</td>
+						<td>{{ $sell_info->send_method }}</td>
+						<td>{{ $sell_info->receive_method }}</td>
+						<td>{{ $sell_info->receive_amount }}</td>
+						<td>sent</td>
+					</tr>
+				@endforeach
+			@endif
+			</tbody>
+		</table>
     </div>
   </div></div>
 		</div>
