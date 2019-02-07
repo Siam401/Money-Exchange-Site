@@ -60,7 +60,7 @@
                     <tr>
                         <th data-breakpoints="xs">SL</th>
                         <th>Date</th>
-                        <th>Transection Type</th>
+                        <th>User Name</th>
                         <th data-breakpoints="xs">Buy Method</th>
                         <th data-breakpoints="xs sm md" data-title="DOB">Receive Method</th>
                         <th>Amonut</th>
@@ -76,11 +76,15 @@
                             <tr data-expanded="true">
                                 <td>{{ ++$a }}</td>
                                 <td>{{ $buy_info->created_at }}</td>
-                                <td>{{ $buy_info->trx_type }}</td>
+                                <td>{{ $buy_info->sender_name }}</td>
                                 <td>{{ $buy_info->send_method }}</td>
                                 <td>{{ $buy_info->receive_method }}</td>
                                 <td>{{ $buy_info->receive_amount }}</td>
-                                <td>sent</td>
+                                <?php if($buy_info->status==0){ ?>
+                                <td><a href="{{ route('buy.confirm', $buy_info->id) }}" class="btn btn-info" onClick="confirm('Are you sure????')">pending</a></td>
+                                <?php }else{?>
+                                <td>Confirmed</td>
+                                <?php }?>
                             </tr>
                         @endforeach
                     @endif
@@ -103,7 +107,7 @@
                     <tr>
                         <th data-breakpoints="xs">SL</th>
                         <th>Date</th>
-                        <th>Transection Type</th>
+                        <th>User Name</th>
                         <th data-breakpoints="xs">Buy Method</th>
                         <th data-breakpoints="xs sm md" data-title="DOB">Receive Method</th>
                         <th>Amonut</th>
@@ -119,11 +123,15 @@
                             <tr data-expanded="true">
                                 <td>{{ ++$a }}</td>
                                 <td>{{ $sell_info->created_at }}</td>
-                                <td>{{ $sell_info->trx_type }}</td>
+                                <td>{{ $sell_info->sender_name }}</td>
                                 <td>{{ $sell_info->send_method }}</td>
                                 <td>{{ $sell_info->receive_method }}</td>
                                 <td>{{ $sell_info->receive_amount }}</td>
-                                <td>sent</td>
+                                <?php if($sell_info->status==0){ ?>
+                                <td><a href="{{ route('sell.confirm', $sell_info->id) }}" class="btn btn-info" onClick="confirm('Are you sure????')">pending</a></td>
+                                <?php }else{?>
+                                <td>Confirmed</td>
+                                <?php }?>
                             </tr>
                         @endforeach
                     @endif

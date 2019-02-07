@@ -14,17 +14,7 @@
                                 <div class="alert alert-info" role="alert">
                                                     <strong> Tdbs</strong> এর সম্মানিত সদস্যগন <strong>Skrill / Neteller</strong> ক্রয় করার ক্ষেত্রে <strong>30 $ </strong>বা তার বেশি দ্রুত দেওয়া হয় । কিন্তু 30 $ এর নিচে ক্রয় করলে ট্রানজেকশন ফি<strong>1 $</strong>  কেটে রাখা হবে এবং <strong>11$</strong> এর নিচে কেও অডার করবেন না ।
                                                 </div>
-                            {!! Form::open(['route' => 'buy.store']) !!}
-                                 <!--- <div class="form-group">
-                                    <label for="usr">Send Method</label>
-                                    <select class="form-control" name="mySelect1" onchange="myFunction1()">
-                                        <option value="Bkash">Bkash</option>
-                                        <option value="Skill">Skill</option>
-                                        <option value="Neteller">Neteller</option>
-                                        <option value="rocket">Rocket</option>
-										
-                                      </select>
-                                  </div> -->
+                            {!! Form::open(['url' => '/moneyexchange/buy/store']) !!}
                                     <input type="hidden" name="trx_type" value="buy" class="form-control"/>
                                     <input type="hidden" name="sender_name" value="{{ Auth::user()->name }}" class="form-control"/>
 
@@ -87,11 +77,10 @@
 										
 			</div>
 								  
-                                    <center><button type="submit" class="btn btn-primary">Submit</button>
-                                  <button type="submit" class="btn btn-primary">Cancel</button></center>
+                                    <center><button type="submit" class="btn btn-primary">Submit</button></center>
                             {!! Form::close() !!}
                             </div>
-
+                    </section>
                         </div>
                     </section>
                     </div></div></div>

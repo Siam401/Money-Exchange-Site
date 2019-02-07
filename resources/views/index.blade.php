@@ -80,7 +80,11 @@
             <td>{{ $buy_info->send_method }}</td>
             <td>{{ $buy_info->receive_method }}</td>
             <td>{{ $buy_info->receive_amount }}</td>
-            <td>sent</td>
+              <?php if($buy_info->status==0){ ?>
+			  <td>Pending</td>
+              <?php }else{?>
+			  <td>Done</td>
+              <?php }?>
           </tr>
         @endforeach
 		@endif
@@ -123,7 +127,11 @@
 						<td>{{ $sell_info->send_method }}</td>
 						<td>{{ $sell_info->receive_method }}</td>
 						<td>{{ $sell_info->receive_amount }}</td>
-						<td>sent</td>
+                        <?php if($sell_info->status==0){ ?>
+						<td>Pending</td>
+                        <?php }else{?>
+						<td>Done</td>
+                        <?php }?>
 					</tr>
 				@endforeach
 			@endif

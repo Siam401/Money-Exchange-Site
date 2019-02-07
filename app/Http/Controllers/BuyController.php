@@ -72,9 +72,14 @@ class BuyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
 
+    }
+    public function confirm($id){
+        $buy=Buy::findOrFail($id);
+        $buy->status=1;
+        $buy->update();
+        return redirect('/moneyexchange/transections');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -83,6 +88,6 @@ class BuyController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

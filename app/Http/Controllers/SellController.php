@@ -74,6 +74,12 @@ class SellController extends Controller
     {
         //
     }
+    public function confirm($id){
+        $sell=Sell::findOrFail($id);
+        $sell->status=1;
+        $sell->update();
+        return redirect('/moneyexchange/transections');
+    }
 
     /**
      * Remove the specified resource from storage.

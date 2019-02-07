@@ -68,8 +68,7 @@
                                     </div>
                                 </div>
                                     </div>
-                                    <center><button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="submit" class="btn btn-primary">Cancel</button></center>
+                                    <center><button type="submit" class="btn btn-primary">Submit</button></center>
                                 {!! Form::close() !!}
                             </div>
 
