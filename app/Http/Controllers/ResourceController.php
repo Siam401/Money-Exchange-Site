@@ -28,4 +28,9 @@ class ResourceController extends Controller
        $sell_infoes=Sell::all();
        return view('transection',compact('buy_infoes','sell_infoes'));
    }
+   public function users(){
+       $users=User::all();
+       return view('users',compact('users'));
+   }
+
 }

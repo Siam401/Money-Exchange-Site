@@ -1,44 +1,6 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 
-
-<!-- //market-->
-<div class="market-updates">
-    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-2">
-            <div class="col-md-4 market-update-right">
-                <i class="fa fa-usd"> </i>
-            </div>
-            <div class="col-md-8 market-update-left">
-                <h4>BUY DOLLAR</h4>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-3">
-            <div class="col-md-4 market-update-right">
-                <i class="fa fa-usd"></i>
-            </div>
-            <div class="col-md-8 market-update-left">
-                <h4>SELL DOLLAR</h4>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <div class="col-md-3 market-update-gd">
-        <div class="market-update-block clr-block-4">
-            <div class="col-md-4 market-update-right">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-8 market-update-left">
-                <h4>EXCHANGE</h4>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <div class="clearfix"> </div>
-</div>
 <div class="row">
     <div class="table-agile-info">
         <div class="panel panel-default">

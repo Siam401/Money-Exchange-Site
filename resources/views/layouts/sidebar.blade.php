@@ -47,6 +47,12 @@
                                 <span>Transections</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('resources.users') }}">
+                                <i class="fa fa-money"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
                         <?php }?>
 
             </ul>            </div>
